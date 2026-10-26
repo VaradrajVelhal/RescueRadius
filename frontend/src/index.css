@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Field Atlas Theme Colors */
+  --color-canvas: #FBFBF7;
+  --color-canvas-subtle: #F5F4EC;
+  --color-canvas-muted: #EBE8DC;
+  
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #FDFDFB;
+  
+  --color-forest-950: #0B1E15;
+  --color-forest-900: #143627;
+  --color-forest-800: #1B4532;
+  --color-forest-700: #265B42;
+  --color-forest-600: #357757;
+  --color-forest-500: #4B9B73;
+  --color-forest-200: #C7DECFA;
+  --color-forest-100: #E6EFEA;
+  --color-forest-50: #F2F7F4;
+
+  --color-vermilion-700: #B83208;
+  --color-vermilion-600: #D9480F;
+  --color-vermilion-500: #F0561E;
+  --color-vermilion-100: #FDE8DE;
+  --color-vermilion-50: #FFF5F0;
+
+  --color-ink-950: #101814;
+  --color-ink-900: #19241E;
+  --color-ink-800: #293830;
+  --color-ink-700: #3E5147;
+  --color-ink-600: #556B60;
+  --color-ink-500: #71877C;
+  --color-ink-400: #93A69C;
+  --color-ink-300: #BDC9C1;
+  --color-ink-200: #DFE5E1;
+  --color-ink-100: #EFF3F0;
+
+  --color-sand-800: #453F35;
+  --color-sand-700: #6B6254;
+  --color-sand-600: #8E8371;
+  --color-sand-500: #AEA493;
+  --color-sand-400: #CCC4B5;
+  --color-sand-300: #E2DDD3;
+  --color-sand-200: #ECE8E0;
+  --color-sand-100: #F6F4EE;
+  --color-sand-50: #FAF9F5;
+
+  --color-border-subtle: #E8E5DA;
+  --color-border-strong: #D5D1C3;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink-900);
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Subtle map contour / cartographic grid accents */
+.bg-carto-grid {
+  background-image: radial-gradient(#D5D1C3 0.75px, transparent 0.75px);
+  background-size: 20px 20px;
+}
+
+.bg-carto-dots {
+  background-image: radial-gradient(#265B42 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+}
+
+/* Custom Leaflet Map styling for Field Atlas */
+.leaflet-container {
+  font-family: var(--font-sans) !important;
+  background-color: #F4F3EB !important;
+}
+
+.custom-map-marker {
+  background: transparent;
+  border: none;
+}
+
+.custom-map-marker:focus {
+  outline: none;
+}
+
+/* Restrained scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F3EB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CCC4B5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AEA493;
+}
+

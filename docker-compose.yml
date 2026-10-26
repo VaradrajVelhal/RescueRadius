@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgis/postgis:15-3.5
+    platform: linux/amd64
+    container_name: rescueradius-db
+    environment:
+      POSTGRES_DB: rescueradius
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - rescueradius_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  rescueradius_postgres_data:
